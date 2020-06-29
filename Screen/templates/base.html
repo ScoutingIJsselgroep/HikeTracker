@@ -51,7 +51,10 @@
         <img src="{% static "logo.png" %}" class="rounded mx-auto d-block mt-1 mb-1" style="width: auto; height: 80px;">
       </div>
   <div class="jumbotron mt-3">
-    {% block content %}{% endblock %}
+    {% block content %}
+      <h1>IJsselgroepRally</h1>
+      <p class="lead">Welkom op de website van de IJsselgroepRally. Met deze website kun jij jouw checkpoints bijhouden!</p>
+    {% endblock %}
   </div>
 </div>
 <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
