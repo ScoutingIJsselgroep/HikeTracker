@@ -1,9 +1,14 @@
 from django.db import models
-import uuid
+import random
+import string
+
+def random_string(stringLength=30):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(stringLength))
 
 # Create your models here.
 class Checkpoint(models.Model):
-    uuid = models.CharField(primary_key=True, default=uuid.uuid4, editable=True, max_length=200)
+    uuid = models.CharField(primary_key=True, default=random_string, editable=True, max_length=200)
     name = models.CharField('Name', max_length=200)
     puzzle = models.URLField('Puzzle', max_length=200, blank=True)
     location = models.CharField('Location', max_length=200, blank=True)
@@ -13,7 +18,7 @@ class Checkpoint(models.Model):
 
 class Team(models.Model):
     name = models.CharField('Name', max_length=200)
-    uuid = models.CharField(primary_key=True, default=uuid.uuid4, editable=True, max_length=200)
+    uuid = models.CharField(primary_key=True, default=random_string, editable=True, max_length=200)
 
     def __str__(self):
         return self.name
