@@ -47,7 +47,7 @@ def checkpoint(request, slug):
         teams_visited = Visit.objects.filter(checkpoint__name=checkpoint.name)
         number_of_teams_visited = teams_visited.count()
 
-        return render(request, "checkpoint.html", {'team_visited': team_visited, 'teams_visited': teams_visited, 'checkpoint': checkpoint, 'team': team, 'number_of_teams': number_of_teams, 'number_of_teams_visited':number_of_teams_visited})
+        return render(request, "checkpoint.html", {'team_visited': team_visited, 'current_url': request.get_full_path(), 'teams_visited': teams_visited, 'checkpoint': checkpoint, 'team': team, 'number_of_teams': number_of_teams, 'number_of_teams_visited':number_of_teams_visited})
     else:
         team_visited = Visit.objects.filter(team=team).order_by('team__name')
 

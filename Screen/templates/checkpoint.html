@@ -13,6 +13,8 @@
             </button>
         </div>
     {% endif %}
+    {% qr_from_text "{{current_path}}" size="T" %}
+
     <p class="lead">{{ checkpoint.description }}</p>
     {% if checkpoint.puzzle %}
         <a class="btn btn-lg btn-primary" href="{{ checkpoint.puzzle }}" role="button">Bekijk de puzzel &raquo;</a>
