@@ -19,9 +19,9 @@ def session(request, slug):
     except:
         return render(request, "not_registered.html")
 
-    visited = Visit.objects.filter(team=team).order_by('name')
+    team_visited = Visit.objects.filter(team=team).order_by('name')
 
-    response = render(request, "registered.html", {'team': team, 'visited': visited})
+    response = render(request, "registered.html", {'team': team, 'team_visited': team_visited})
     
     response.set_cookie('registration', slug)
 
