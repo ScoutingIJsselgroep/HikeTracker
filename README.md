@@ -14,12 +14,10 @@ $ git clone https://github.com/ScoutingIJsselgroep/rally.git
 $ python3 -m venv getting-started
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
-
 $ python manage.py migrate
 $ python manage.py collectstatic
 
-$ heroku local
+$ DEBUG=true && python manage.py startserver debug
 ```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
