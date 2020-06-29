@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Checkpoint {{ checkpoint.name }}{% endblock %}
 
 {% block content %}
     <h1>{{ checkpoint.name }}</h1>
@@ -47,7 +47,7 @@
     {% if checkpoint.location %}
         <script>
             var map = L.map('map').setView([{{checkpoint.location}}], 12);
-            L.tileLayer('https://tile.openstreetmap.be/osmbe/{z}/{x}/{y}.png', {
+            L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution:
                 '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' +
                 ', Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>',
