@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>{{ checkpoint.name }}</h1>
+    <p class="lead">Bezocht door {{ number_of_teams_visited }} team{% if number_of_teams_visited != 1 %}s{%endif%}.</p>
+    {% if number_of_teams_visited >= number_of_teams %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Puzzel kan meegenomen worden.</strong> De puzzel is door ieder team gevonden, dus je mag hem meenemen!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <p class="lead">{{ checkpoint.description }}</p>
+    {% if checkpoint.puzzle %}
+        <a class="btn btn-lg btn-primary" href="{{ checkpoint.puzzle }}" role="button">Bekijk de puzzel &raquo;</a>
+    {% endif %}
+
+    {% if checkpoint.location %}
+        <div id="mapdiv"></div>
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <script>
+        map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
+    
+        var lonLat = new OpenLayers.LonLat( {{ checkpoint.location }} )
+                .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+                );
+                
+        var zoom=16;
+    
+        var markers = new OpenLayers.Layer.Markers( "Markers" );
+        map.addLayer(markers);
+        
+        markers.addMarker(new OpenLayers.Marker(lonLat));
+        
+        map.setCenter (lonLat, zoom);
+        </script>
+    {% endif %}
+
+    <h3 class='mt-5'>Bezocht door de volgende teams</h3>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Team</th>
+            <th scope="col">Tijdstip</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for v_team in teams_visited %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ v_team.team.name }}</td>
+                <td>{{ v_team.date_visited }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
