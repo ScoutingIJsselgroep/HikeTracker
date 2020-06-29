@@ -1,27 +1,6 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
-# platform: osx-64
-beautifulsoup4
-ca-certificates
-certifi
 django
 django-bootstrap4
-libcxx
-libedit
-libffi
-ncurses
-openssl
-pip
-python
-pytz
-readline
-setuptools
-soupsieve
-sqlite
-sqlparse
-tk
-wheel
-xz
-zlib
 gunicorn
 django-heroku
