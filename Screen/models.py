@@ -12,6 +12,7 @@ class Checkpoint(models.Model):
     name = models.CharField('Name', max_length=200)
     puzzle = models.URLField('Puzzle', max_length=200, blank=True)
     location = models.CharField('Location', max_length=200, blank=True)
+    description = models.TextField('Description', max_length=2000, blank=True)
 
     def __str__(self):
         return self.name

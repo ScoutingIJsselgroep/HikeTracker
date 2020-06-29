@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load markup_tags %}
 {% load qr_code %}
 
 {% block title %}Checkpoint {{ checkpoint.name }}{% endblock %}
@@ -16,7 +17,7 @@
         </div>
     {% endif %}
 
-    <p class="lead">{{ checkpoint.description }}</p>
+    <p class="lead">{{ checkpoint.description|apply_markup:"markdown" }} </p>
     {% if checkpoint.puzzle %}
         <a class="btn btn-lg btn-primary" href="{{ checkpoint.puzzle }}" role="button">Bekijk de puzzel &raquo;</a>
     {% endif %}

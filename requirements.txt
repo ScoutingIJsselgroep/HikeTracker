@@ -5,3 +5,5 @@ django-bootstrap4
 gunicorn
 django-heroku
 django-qr-code
+django-markup
+bleach

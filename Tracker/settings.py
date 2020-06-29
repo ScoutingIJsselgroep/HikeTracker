@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'bootstrap4',
     'qr_code',
+    'django_markup',
     'Screen.apps.ScreenConfig',
     'django.contrib.admin',
     'django.contrib.auth',
