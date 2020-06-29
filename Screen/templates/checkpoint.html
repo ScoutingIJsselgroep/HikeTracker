@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load qr_code %}
+
 {% block title %}Checkpoint {{ checkpoint.name }}{% endblock %}
 
 {% block content %}
@@ -13,7 +15,6 @@
             </button>
         </div>
     {% endif %}
-    {% qr_from_text "{{current_path}}" size="T" %}
 
     <p class="lead">{{ checkpoint.description }}</p>
     {% if checkpoint.puzzle %}
@@ -43,6 +44,10 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class="float-right">
+        {% qr_from_text "{{current_path}}" size="T" %}
+    </div>
+    <div style="clear: both;"></div>
 {% endblock %}
 
 {% block script %}
