@@ -1,8 +1,31 @@
-# Python: Getting Started
+# HikeTracker
 
-A barebones Django app, which can easily be deployed to Heroku.
+Een applicatie waar deelnemers met behulp van een QR-code checkpoints kunnen scannen. Hiermee kan de organisatie van bijvoorbeeld een hike in de gaten houden waar deelnemers al geweest zijn. Daarnaast kunnen deelnemers hun voortgang ten opzichte van andere teams in de gaten houden. 
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+## Functionaliteit
+De volgende functionaliteit is al ingebouwd.
+
+- [x] Beheerpaneel.
+- [x] Overzicht van reeds bezochte checkpoints.
+- [x] Overzicht van deelnemers die specifieke checkpoint hebben bezocht.
+- [x] Het plaatsen van een marker op een kaart. 
+- [x] Toevoegen van een hyperlink naar een document of aanwijzing.
+- [x] Aanmaken van een custom link, om deze bijvoorbeeld als oplossing van een puzzel te gebruiken.
+- [x] Deelnemers krijgen een melding als het gescande checkpoint door iedereen is bezocht, zodat deze mee kan worden genomen.
+
+De volgende functionaliteit zal nog worden ingebouwd.
+
+- [] Uploaden van bestanden (PDF, JPG, ...) in plaats van gebruik van een link.
+- [] Markdown voor de checkpoint-tekst.
+- [] Functionaliteit om de checkpoints op een kaart te tonen.
+- [] Overzicht om QR-codes voor registratie deelnemers en 
+- [] Aanmaken van meerdere hikes of evenementen, zodat niet iedere keer een nieuwe instantie gebruikt hoeft te worden.
+- [] Registratieformulier gebruikers, zodat ook andere scoutinggroepen gebruik kunnen maken van het systeem.
+- [] Overzicht voor organisatie om doorlooptijden van verschillende teams te bekijken, ook met behulp van een [team-standings diagram](https://commons.wikimedia.org/wiki/File:Team_Standings.png).
+
+Voor de rest zijn de volgende functionaliteiten voor een IJsselgroepRally nog gewenst.
+- [] Toevoegen puntentelling op basis van het aantal bezochte checkpoints.
+- [] Toevoegen puntentelling op basis van een ander klassementsonderdeel. 
 
 ## Running Locally
 
