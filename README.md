@@ -15,7 +15,8 @@ De volgende functionaliteit is al ingebouwd.
 
 De volgende functionaliteit zal nog worden ingebouwd.
 
-- [ ] Uploaden van bestanden (PDF, JPG, ...) in plaats van gebruik van een link.
+- [ ] Uploaden van bestanden (PDF, JPG, ...) in plaats van gebruik van een link naar een CDN.
+- [ ] Beheerpaneel in dezelfde stijl als de frontend.
 - [ ] Markdown voor de checkpoint-tekst.
 - [ ] Functionaliteit om de checkpoints op een kaart te tonen.
 - [ ] Overzicht om QR-codes voor registratie deelnemers en 
