@@ -39,6 +39,7 @@ $ pip install -r requirements.txt
 
 $ python manage.py migrate
 $ python manage.py collectstatic
+$ python manage.py createsuperuser
 
 $ DEBUG=true && python manage.py startserver debug
 ```
