@@ -27,9 +27,8 @@ Voor de rest zijn de volgende functionaliteiten voor een IJsselgroepRally nog ge
 - [ ] Toevoegen puntentelling op basis van het aantal bezochte checkpoints.
 - [ ] Toevoegen puntentelling op basis van een ander klassementsonderdeel. 
 
-## Running Locally
-
-Make sure you have Python 3.7 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+## Lokaal draaien
+Zorg ervoor dat je beschikt over Python 3.7 [lokaal geinstalleerd](http://install.python-guide.org). Om te pushen naar Heroku, moet je [Heroku CLI installeren](https://devcenter.heroku.com/articles/heroku-cli), alsmede [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
 ```sh
 $ git clone https://github.com/ScoutingIJsselgroep/rally.git
@@ -43,7 +42,7 @@ $ python manage.py collectstatic
 $ DEBUG=true && python manage.py startserver debug
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+De app draait nu op [localhost:5000](http://localhost:5000/). Het administratiepaneel is beschikbaar op [localhost:5000](http://localhost:5000/admin).
 
 ## Deploying to Heroku
 
@@ -54,6 +53,6 @@ $ git push heroku master
 $ heroku run python manage.py migrate
 $ heroku open
 ```
-or
+of
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
