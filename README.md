@@ -19,7 +19,7 @@ De volgende functionaliteit zal nog worden ingebouwd.
 - [ ] Beheerpaneel in dezelfde stijl als de frontend.
 - [ ] Markdown voor de checkpoint-tekst.
 - [ ] Functionaliteit om de checkpoints op een kaart te tonen.
-- [ ] Overzicht om QR-codes voor registratie deelnemers en 
+- [ ] Overzicht om QR-codes voor registratie van deelnemers en checkpoints te genereren.
 - [ ] Aanmaken van meerdere hikes of evenementen, zodat niet iedere keer een nieuwe instantie gebruikt hoeft te worden.
 - [ ] Registratieformulier gebruikers, zodat ook andere scoutinggroepen gebruik kunnen maken van het systeem.
 - [ ] Overzicht voor organisatie om doorlooptijden van verschillende teams te bekijken, ook met behulp van een [team-standings diagram](https://commons.wikimedia.org/wiki/File:Team_Standings.png).
