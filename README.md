@@ -15,17 +15,17 @@ De volgende functionaliteit is al ingebouwd.
 
 De volgende functionaliteit zal nog worden ingebouwd.
 
-- [] Uploaden van bestanden (PDF, JPG, ...) in plaats van gebruik van een link.
-- [] Markdown voor de checkpoint-tekst.
-- [] Functionaliteit om de checkpoints op een kaart te tonen.
-- [] Overzicht om QR-codes voor registratie deelnemers en 
-- [] Aanmaken van meerdere hikes of evenementen, zodat niet iedere keer een nieuwe instantie gebruikt hoeft te worden.
-- [] Registratieformulier gebruikers, zodat ook andere scoutinggroepen gebruik kunnen maken van het systeem.
-- [] Overzicht voor organisatie om doorlooptijden van verschillende teams te bekijken, ook met behulp van een [team-standings diagram](https://commons.wikimedia.org/wiki/File:Team_Standings.png).
+- [ ] Uploaden van bestanden (PDF, JPG, ...) in plaats van gebruik van een link.
+- [ ] Markdown voor de checkpoint-tekst.
+- [ ] Functionaliteit om de checkpoints op een kaart te tonen.
+- [ ] Overzicht om QR-codes voor registratie deelnemers en 
+- [ ] Aanmaken van meerdere hikes of evenementen, zodat niet iedere keer een nieuwe instantie gebruikt hoeft te worden.
+- [ ] Registratieformulier gebruikers, zodat ook andere scoutinggroepen gebruik kunnen maken van het systeem.
+- [ ] Overzicht voor organisatie om doorlooptijden van verschillende teams te bekijken, ook met behulp van een [team-standings diagram](https://commons.wikimedia.org/wiki/File:Team_Standings.png).
 
 Voor de rest zijn de volgende functionaliteiten voor een IJsselgroepRally nog gewenst.
-- [] Toevoegen puntentelling op basis van het aantal bezochte checkpoints.
-- [] Toevoegen puntentelling op basis van een ander klassementsonderdeel. 
+- [ ] Toevoegen puntentelling op basis van het aantal bezochte checkpoints.
+- [ ] Toevoegen puntentelling op basis van een ander klassementsonderdeel. 
 
 ## Running Locally
 
