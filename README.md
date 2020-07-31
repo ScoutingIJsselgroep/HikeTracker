@@ -13,7 +13,7 @@ De volgende functionaliteit is al ingebouwd.
 - [x] Aanmaken van een custom link, om deze bijvoorbeeld als oplossing van een puzzel te gebruiken.
 - [x] Deelnemers krijgen een melding als het gescande checkpoint door iedereen is bezocht, zodat deze mee kan worden genomen.
 
-De volgende functionaliteit zal nog worden ingebouwd.
+De volgende functionaliteiten staan op de 'roadmap'.
 
 - [ ] Uploaden van bestanden (PDF, JPG, ...) in plaats van gebruik van een link naar een CDN.
 - [ ] Beheerpaneel in dezelfde stijl als de frontend.
@@ -27,6 +27,9 @@ De volgende functionaliteit zal nog worden ingebouwd.
 Voor de rest zijn de volgende functionaliteiten voor een IJsselgroepRally nog gewenst.
 - [ ] Toevoegen puntentelling op basis van het aantal bezochte checkpoints.
 - [ ] Toevoegen puntentelling op basis van een ander klassementsonderdeel. 
+
+Volgende functionaliteiten zijn mooi om te hebben, maar staan nog niet op de roadmap.
+- [ ] Methode om routes te delen (bewerkers- en inzagerechten administratiepaneel) en om te kopiëren naar een ander account, zodat je jouw mooie route met andere scoutinggroepen kunt delen, om deze bijvoorbeeld tijdens verhuur beschikbaar te stellen aan anderen.
 
 ## Lokaal draaien
 Zorg ervoor dat je beschikt over Python 3.7 [lokaal geinstalleerd](http://install.python-guide.org). Om te pushen naar Heroku, moet je [Heroku CLI installeren](https://devcenter.heroku.com/articles/heroku-cli), alsmede [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
