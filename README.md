@@ -29,6 +29,9 @@ Voor de rest zijn de volgende functionaliteiten voor een IJsselgroepRally nog ge
 - [ ] Toevoegen puntentelling op basis van een ander klassementsonderdeel. 
 
 Volgende functionaliteiten zijn mooi om te hebben, maar staan nog niet op de roadmap.
+- [ ] Toevoegen van progressive web-app functionaliteit.
+  - [ ] In de app een QR-scan functionaliteit toevoegen.
+- [ ] Realtime locatie met behulp van Javascript/websockets om de locatie van gebruikers te tracken als zij de website of progressive web-app open hebben, zodat de leiding kan zien bij welke supermarkt de deelnemers zitten.
 - [ ] Methode om routes te delen (bewerkers- en inzagerechten administratiepaneel) en om te kopiëren naar een ander account, zodat je jouw mooie route met andere scoutinggroepen kunt delen, om deze bijvoorbeeld tijdens verhuur beschikbaar te stellen aan anderen.
 
 ## Lokaal draaien
