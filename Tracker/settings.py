@@ -125,4 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+UPLOAD_URL = '/uploads/'
+UPLOAD_ROOT = os.path.join(BASE_DIR, 'uploads')
+
 django_heroku.settings(locals())

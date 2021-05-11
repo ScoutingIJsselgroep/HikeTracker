@@ -6,64 +6,77 @@
 {% block title %}Checkpoint {{ checkpoint.name }}{% endblock %}
 
 {% block content %}
-    <h1>{{ checkpoint.name }}</h1>
-    <p class="lead">Bezocht door {{ number_of_teams_visited }} team{% if number_of_teams_visited != 1 %}s{%endif%}.</p>
-    {% if number_of_teams_visited >= number_of_teams %}
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Puzzel kan meegenomen worden.</strong> De puzzel is door ieder team gevonden, dus je mag hem meenemen!
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    {% endif %}
+<h1>{{ checkpoint.name }}</h1>
+<p class="lead">Bezocht door {{ number_of_teams_visited }} team{% if number_of_teams_visited != 1 %}s{%endif%}.</p>
+{% if number_of_teams_visited >= number_of_teams %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Puzzel kan meegenomen worden.</strong> De puzzel is door ieder team gevonden, dus je mag hem meenemen!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
 
-    <p class="lead">{{ checkpoint.description|apply_markup:"markdown" }} </p>
-    {% if checkpoint.puzzle %}
-        <a class="btn btn-lg btn-primary" href="{{ checkpoint.puzzle }}" role="button">Bekijk de puzzel &raquo;</a>
-    {% endif %}
+<p class="lead">{{ checkpoint.description|apply_markup:"markdown" }} </p>
+{% if checkpoint.puzzle %}
+<a class="btn btn-lg btn-primary" href="{{ checkpoint.puzzle }}" role="button">Bekijk de puzzel &raquo;</a>
+{% endif %}
 
-    {% if checkpoint.location %}
-        <div id="map" style="width: 100%; height: 40vh;"></div>        
-    {% endif %}
+{% if checkpoint.checkpoint_file %}
+<a class="btn btn-lg btn-primary" href="{{ checkpoint.checkpoint_file.url }}" target="__blank" role="button">
+    Download instructie
+</a>
+{% endif %}
 
-    <h3 class='mt-5'>Bezocht door de volgende teams</h3>
-    <table class="table">
-        <thead>
-          <tr>
+{% if checkpoint.location %}
+<div id="map" style="width: 100%; height: 40vh;"></div>
+{% endif %}
+
+<h3 class='mt-5'>Bezocht door de volgende teams</h3>
+<table class="table">
+    <thead>
+        <tr>
             <th scope="col">#</th>
             <th scope="col">Team</th>
             <th scope="col">Tijdstip</th>
-          </tr>
-        </thead>
-        <tbody>
+        </tr>
+    </thead>
+    <tbody>
         {% for v_team in teams_visited %}
-            <tr>
-                <th scope="row">{{ forloop.counter }}</th>
-                <td>{{ v_team.team.name }}</td>
-                <td>{{ v_team.date_visited }}</td>
-            </tr>
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ v_team.team.name }}</td>
+            <td>{{ v_team.date_visited }}</td>
+        </tr>
         {% endfor %}
-        </tbody>
-    </table>
-    <div class="float-right">
-        {% qr_from_text "{{current_path}}" size="T" %}
-    </div>
-    <div style="clear: both;"></div>
+    </tbody>
+</table>
+<div class="float-right">
+    {% qr_from_text "{{current_path}}" size="T" %}
+</div>
+<div style="clear: both;"></div>
 {% endblock %}
 
 {% block script %}
-    {% if checkpoint.location %}
-        <script>
-            var map = L.map('map').setView([{{checkpoint.location}}], 12);
-            L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution:
-                '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' +
-                ', Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>',
-            maxZoom: 18
-        }).addTo(map);
-        var marker = L.marker([{{ checkpoint.location }}]).addTo(map);
-        var popup = marker.bindPopup('{{checkpoint.name}}');
-        popup.openPopup();
-        </script>
-    {% endif %}
+{% if checkpoint.location %}
+<script>
+    var map = L.map('map').setView([{
+        {
+            checkpoint.location
+        }
+    }], 12);
+    L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' +
+            ', Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>',
+        maxZoom: 18
+    }).addTo(map);
+    var marker = L.marker([{
+        {
+            checkpoint.location
+        }
+    }]).addTo(map);
+    var popup = marker.bindPopup('{{checkpoint.name}}');
+    popup.openPopup();
+</script>
+{% endif %}
 {% endblock %}

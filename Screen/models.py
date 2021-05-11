@@ -21,6 +21,7 @@ class Checkpoint(models.Model):
     location = models.CharField('Location', max_length=200, blank=True)
     description = models.TextField('Description', max_length=2000, blank=True)
     route = models.ForeignKey(Route, on_delete=models.CASCADE, default=None)
+    checkpoint_file = models.FileField(upload_to='uploads', blank=True)
 
     def __str__(self):
         return self.name
