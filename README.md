@@ -12,10 +12,13 @@ De volgende functionaliteit is al ingebouwd.
 - [x] Toevoegen van een hyperlink naar een document of aanwijzing.
 - [x] Aanmaken van een custom link, om deze bijvoorbeeld als oplossing van een puzzel te gebruiken.
 - [x] Deelnemers krijgen een melding als het gescande checkpoint door iedereen is bezocht, zodat deze mee kan worden genomen.
+- [x] Uploaden van bestanden (PDF, JPG, ...) in plaats van gebruik van een link naar een CDN.
+- [x] Markdown voor de checkpoint-tekst.
+- [x] Aanmaken van meerdere hikes of evenementen, zodat niet iedere keer een nieuwe instantie gebruikt hoeft te worden.
+
 
 De volgende functionaliteiten staan op de 'roadmap'.
 
-- [ ] Uploaden van bestanden (PDF, JPG, ...) in plaats van gebruik van een link naar een CDN.
 - [ ] Beheerpaneel in dezelfde stijl als de frontend.
 - [ ] Markdown voor de checkpoint-tekst.
 - [ ] Functionaliteit om de checkpoints op een kaart te tonen.
