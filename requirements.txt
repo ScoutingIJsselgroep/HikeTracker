@@ -7,3 +7,4 @@ django-heroku
 django-qr-code
 django-markup
 bleach
+markdown==3.3.4
