@@ -52,3 +52,27 @@ def checkpoint(request, slug):
         team_visited = Visit.objects.filter(team=team).order_by('team__name')
 
         return render(request, "checkpoint_notfound.html", {'team_visited': team_visited, 'team': team})
+    
+def progress(request):
+    if 'registration' not in request.COOKIES:
+        return render(request, "not_registered.html")
+
+    # Get route identifier
+    route_id = Team.objects.get(uuid=request.COOKIES['registration']).route
+
+    # Generate matrix
+    teams = Team.objects.filter(route=route_id).all()
+    checkpoints = Checkpoint.objects.filter(route=route_id).all()
+    progress = [{"name": team.name, "uuid": team.uuid, "checkpoints": [{"name": checkpoint.name, "uuid": checkpoint.uuid, "visited": False} for checkpoint in checkpoints]} for team in teams]
+
+    # Apply visits
+    visits = Visit.objects.all().select_related('team', 'checkpoint')
+    for visit in visits:
+        for team in progress:
+            if team["uuid"] == visit.team.uuid:
+                for checkpoint in team["checkpoints"]:
+                    if checkpoint["uuid"] == visit.checkpoint.uuid:
+                        checkpoint["visited"] = True
+                        checkpoint["date_visited"] = visit.date_visited
+
+    return render(request, "progress.html", {'progress': progress})
