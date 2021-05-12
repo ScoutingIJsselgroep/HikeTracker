@@ -69,6 +69,4 @@ def progress(request):
                         checkpoint["visited"] = True
                         checkpoint["date_visited"] = visit.date_visited
 
-    #for 
-    print(visits[0])
     return render(request, "progress.html", {'progress': progress})
