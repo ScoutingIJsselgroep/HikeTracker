@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Voortgang checkpoints{% endblock %}
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Team</th>
+            <th scope="col">Bezochte checkpoints</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for team in progress %}
+        <tr>
+            <td>{{ team.name }}</td>
+            <td>
+                {% for checkpoint in team.checkpoints %}
+
+                {% if checkpoint.visited %}
+                <span class="badge bg-success" data-bs-toggle="tooltip" data-bs-placement="top"
+                    title="{{ checkpoint.name }} om {{ checkpoint.date_visited }}">&nbsp;</span>
+                {% else %}
+                <span class="badge bg-danger" data-bs-toggle="tooltip" data-bs-placement="top"
+                    title="{{ checkpoint.name }}">&nbsp;</span>
+                {% endif %}
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block script %}
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+{% endblock %}
