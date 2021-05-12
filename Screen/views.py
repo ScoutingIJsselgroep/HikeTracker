@@ -54,9 +54,15 @@ def checkpoint(request, slug):
         return render(request, "checkpoint_notfound.html", {'team_visited': team_visited, 'team': team})
     
 def progress(request):
+    if 'registration' not in request.COOKIES:
+        return render(request, "not_registered.html")
+
+    # Get route identifier
+    route_id = Team.objects.get(uuid=request.COOKIES['registration']).route
+
     # Generate matrix
-    teams = Team.objects.all()
-    checkpoints = Checkpoint.objects.all()
+    teams = Team.objects.filter(route=route_id).all()
+    checkpoints = Checkpoint.objects.filter(route=route_id).all()
     progress = [{"name": team.name, "uuid": team.uuid, "checkpoints": [{"name": checkpoint.name, "uuid": checkpoint.uuid, "visited": False} for checkpoint in checkpoints]} for team in teams]
 
     # Apply visits
