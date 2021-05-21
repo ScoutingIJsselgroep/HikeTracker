@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Checkpoint {{ checkpoint.name }}{% endblock %}
+
+{% block content %}
+<ul class="list-group">
+    {% for v_team in teams_visited %}
+    <a href="/checkpoint/v_team.checkpoint.id" class="list-group-item list-group-item-action" aria-current="true">
+        v_team.checkpoint.name
+    </a>
+    <td>{{ v_team.date_visited }}</td>
+    {% endfor %}
+</ul>
+{% endblock %}

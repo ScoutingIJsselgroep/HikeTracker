@@ -11,8 +11,13 @@ import hashlib
 
 
 def index(request):
-    return render(request, "base.html")
-
+    try: 
+        team = Team.objects.get(uuid=request.COOKIES['registration'])
+        team_visited = Visit.objects.filter(team=team).order_by('team__name')
+        return render(request, "base.html", {'team': team, 'team_visited': team_visited})
+    except:
+        return render(request, "base.html")
+    
 def session(request, slug):
     try: 
         team = Team.objects.get(uuid=slug)
@@ -52,6 +57,14 @@ def checkpoint(request, slug):
         team_visited = Visit.objects.filter(team=team).order_by('team__name')
 
         return render(request, "checkpoint_notfound.html", {'team_visited': team_visited, 'team': team})
+
+def checkpoints(request):
+    if 'registration' not in request.COOKIES:
+        return render(request, "not_registered.html")
+
+    team = Team.objects.get(uuid=request.COOKIES['registration'])
+    team_visited = Visit.objects.filter(team=team).order_by('team__name')
+    return render(request, "checkpoints.html", {'team_visited': team_visited, 'team': team})
     
 def progress(request):
     if 'registration' not in request.COOKIES:
