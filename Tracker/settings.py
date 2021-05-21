@@ -118,6 +118,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+MARKUP_SETTINGS = {
+    'markdown': {
+        'safe_mode': False
+    }
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
