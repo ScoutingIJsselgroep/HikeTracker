@@ -46,6 +46,27 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/progress" tabindex="-1" aria-disabled="true">Voortgang teams</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/progress" tabindex="-1" aria-disabled="true">Mijn Checkpoints</a>
+        </li>
+        {% if team %}
+        <li class="nav-item pull-right">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ team.name }}</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
   <div class="container">
     {% load static %}
     <div class="mt-3 mb-3">
@@ -59,35 +80,6 @@
       {% endblock %}
     </div>
   </div>
-  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        {% if team_visited %}
-        <li class="nav-item dropup">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Bezochte checkpoints</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown10">
-            {% for visit in team_visited %}
-            <a class="dropdown-item" href="/checkpoint/{{ visit.checkpoint.uuid }}">{{ visit.checkpoint.name }}</a>
-            {% endfor %}
-          </div>
-        </li>
-        {% endif %}
-        {% if team %}
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ team.name }}</a>
-        </li>
-        {% endif %}
-        <li class="nav-item">
-          <a class="nav-link" href="/progress" tabindex="-1" aria-disabled="true">Voortgang teams</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 </body>
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
