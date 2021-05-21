@@ -63,7 +63,7 @@ def checkpoints(request):
         return render(request, "not_registered.html")
 
     team = Team.objects.get(uuid=request.COOKIES['registration'])
-    team_visited = Visit.objects.filter(team=team).order_by('team__name')
+    team_visited = Visit.objects.filter(team=team).order_by('checkpoint__name')
     return render(request, "checkpoints.html", {'team_visited': team_visited, 'team': team})
     
 def progress(request):
