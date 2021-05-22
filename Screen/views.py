@@ -138,11 +138,11 @@ def generate_qr(request, route_id):
 
         d = Drawing(20*cm, 20*cm) 
         d.add(qrw)
-        p.setFont('Helvetica',30)
-        p.drawCentredString(21*cm/2, 24*cm, "CHECKPOINT")
-        p.setFont('Helvetica',45)
-        p.drawCentredString(21*cm/2, 22*cm, checkpoint.name)
         p.setFont('Helvetica',20)
+        p.drawCentredString(21*cm/2, 24*cm, "CHECKPOINT")
+        p.setFont('Helvetica',30)
+        p.drawCentredString(21*cm/2, 22*cm, checkpoint.name)
+        p.setFont('Helvetica',15)
         p.drawCentredString(21*cm/2, 20*cm, f"QR code voor {route.name}. S.v.p. laten hangen.")
 
         renderPDF.draw(d, p, 0, 0)
@@ -158,11 +158,11 @@ def generate_qr(request, route_id):
 
         d = Drawing(10*cm, 10*cm) 
         d.add(qrw)
-        p.setFont('Helvetica',30)
-        p.drawCentredString(21*cm/2, 24*cm, "TEAM")
-        p.setFont('Helvetica',45)
-        p.drawCentredString(21*cm/2, 22*cm, team.name)
         p.setFont('Helvetica',20)
+        p.drawCentredString(21*cm/2, 24*cm, "TEAM")
+        p.setFont('Helvetica',30)
+        p.drawCentredString(21*cm/2, 22*cm, team.name)
+        p.setFont('Helvetica',15)
         p.drawCentredString(21*cm/2, 20*cm, f"Scan mij om je telefoon te registreren!")
 
         renderPDF.draw(d, p, 5*cm, 0)
