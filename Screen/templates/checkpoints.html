@@ -3,6 +3,9 @@
 {% block title %}Checkpoint {{ checkpoint.name }}{% endblock %}
 
 {% block content %}
+<h1>Checkpoints</h1>
+<p class="lead">Je hebt de volgende checkpoints bezocht.</p>
+
 <ul class="list-group">
     {% for v_team in team_visited %}
     <a href="/checkpoint/{{ v_team.checkpoint.uuid }}" class="list-group-item list-group-item-action"
