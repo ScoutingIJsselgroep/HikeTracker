@@ -56,21 +56,15 @@
 {% block script %}
 {% if checkpoint.location %}
 <script>
-    var map = L.map('map').setView([{
-        {
-            checkpoint.location
-        }
-    }], 12);
+    var coordinates = "{{checkpoint.location}}".split(",");
+    console.log(coordinates);
+    var map = L.map('map').setView(coordinates, 12);
     L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' +
             ', Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>',
         maxZoom: 18
     }).addTo(map);
-    var marker = L.marker([{
-        {
-            checkpoint.location
-        }
-    }]).addTo(map);
+    var marker = L.marker(coordinates).addTo(map);
     var popup = marker.bindPopup('{{checkpoint.name}}');
     popup.openPopup();
 </script>
