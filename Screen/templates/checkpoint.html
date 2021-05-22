@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% load markup_tags %}
-{% load qr_code %}
 
 {% block title %}Checkpoint {{ checkpoint.name }}{% endblock %}
 
@@ -51,9 +50,6 @@
         {% endfor %}
     </tbody>
 </table>
-<div class="float-right">
-    {% qr_from_text "{{current_path}}" size="T" %}
-</div>
 <div style="clear: both;"></div>
 {% endblock %}
 
