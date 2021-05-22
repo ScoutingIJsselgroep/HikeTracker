@@ -99,7 +99,7 @@ def progress(request):
     current_team = Team.objects.get(uuid=request.COOKIES['registration']) 
     teams = Team.objects.filter(route=route_id).all()
     checkpoints = Checkpoint.objects.filter(route=route_id).order_by('name')
-    progress = [{"name": team.name, "uuid": team.uuid, "checkpoints": [{"name": checkpoint.name, "uuid": checkpoint.uuid, "visited": False} for checkpoint in checkpoints]} for team in teams]
+    progress = [{"name": team.name, "punten": team.punten-team.bonuspunten+team.strafpunten, "bonuspunten": team.bonuspunten, "strafpunten": team.strafpunten, "uuid": team.uuid, "checkpoints": [{"name": checkpoint.name, "uuid": checkpoint.uuid, "visited": False} for checkpoint in checkpoints]} for team in teams]
 
     # Apply visits
     visits = Visit.objects.all().select_related('team', 'checkpoint')

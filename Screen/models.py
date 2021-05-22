@@ -28,6 +28,9 @@ class Checkpoint(models.Model):
 
 class Team(models.Model):
     name = models.CharField('Name', max_length=200)
+    punten = models.IntegerField('Punten', default=0)
+    bonuspunten = models.IntegerField('Bonuspunten', default=0)
+    strafpunten = models.IntegerField('Strafpunten', default=0)
     uuid = models.CharField(primary_key=True, default=random_string, editable=True, max_length=200)
     route = models.ForeignKey(Route, on_delete=models.CASCADE, default=None)
 

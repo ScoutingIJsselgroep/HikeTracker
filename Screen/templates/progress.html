@@ -11,6 +11,9 @@
         <tr>
             <th scope="col">Team</th>
             <th scope="col">Bezochte checkpoints</th>
+            <th scope="col">Bonuspunten</th>
+            <th scope="col">Strafpunten</th>
+            <th scope="col">Punten (<abbr title="Lager is beter" class="initialism">totaal</abbr>)</th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +32,9 @@
                 {% endif %}
                 {% endfor %}
             </td>
+            <td>{{ team.bonuspunten }}</td>
+            <td>{{ team.strafpunten }}</td>
+            <td>{{ team.punten }}</td>
         </tr>
         {% endfor %}
     </tbody>
