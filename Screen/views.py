@@ -75,7 +75,7 @@ def progress(request):
 
     # Generate matrix
     teams = Team.objects.filter(route=route_id).all()
-    checkpoints = Checkpoint.objects.filter(route=route_id).order_by('checkpoint__name')
+    checkpoints = Checkpoint.objects.filter(route=route_id).order_by('name')
     progress = [{"name": team.name, "uuid": team.uuid, "checkpoints": [{"name": checkpoint.name, "uuid": checkpoint.uuid, "visited": False} for checkpoint in checkpoints]} for team in teams]
 
     # Apply visits
