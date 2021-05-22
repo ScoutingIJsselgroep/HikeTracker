@@ -46,22 +46,36 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    {% load static %}
+    <a class="navbar-brand" href="#">
+      <img src="{% static "logo.png" %}" width="30" height="30" alt="">
+      IJsselgroep Rally
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/progress" tabindex="-1" aria-disabled="true">Voortgang teams</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/checkpoints" tabindex="-1" aria-disabled="true">Mijn Checkpoints</a>
-        </li>
+
         {% if team %}
-        <li class="nav-item pull-right">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ team.name }}</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/route" tabindex="-1" aria-disabled="true">Introductie</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/checkpoints" tabindex="-1" aria-disabled="true">Checkpoints</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Mijn team
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" disable="true">{{ team.name }}</a>
+            <div class="dropdown-divider"></div>
+            <a class="nav-link" href="/progress" tabindex="-1" aria-disabled="true">Voortgang teams</a>
+          </div>
         </li>
         {% endif %}
       </ul>

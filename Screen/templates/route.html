@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load markup_tags %}
+
+{% block title %}{{ route.name }}{% endblock %}
+
+{% block content %}
+<h1>{{route.name}}</h1>
+<p class="lead">{{ route.description|apply_markup:"markdown" }}</p>
+
+{% if isadmin %}
+<a class="btn btn-lg btn-primary" href="/generateqr/{{route.uuid}}" target="__blank" role="button">
+    Download QR checkpoint en teams
+</a>
+{% endif %}
+{% endblock %}
