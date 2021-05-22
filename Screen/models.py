@@ -41,6 +41,9 @@ class Visit(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     checkpoint = models.ForeignKey(Checkpoint, on_delete=models.CASCADE)
     date_visited = models.DateTimeField()
+
+    def __str__(self):
+        return f"{self.checkpoint.name} door {self.team.name}"
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=['team', 'checkpoint'], name='Constraint')
