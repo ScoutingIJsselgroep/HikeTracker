@@ -10,7 +10,7 @@ def random_string(stringLength=30):
 class Route(models.Model):
     name = models.CharField('Name', max_length=200, default='')
     uuid = models.CharField(primary_key=True, default=random_string, editable=False, max_length=200)
-    description = models.TextField('Description', max_length=2000, blank=True)
+    description = models.TextField('Description', max_length=10000, blank=True)
 
     def __str__(self):
         return self.name
