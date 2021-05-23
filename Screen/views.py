@@ -131,7 +131,7 @@ def generate_qr(request, route_id):
     p = canvas.Canvas(response)
 
     for checkpoint in checkpoints:
-        qrw = QrCodeWidget(f"https://piraat-hike-tracker.herokuapp.com/register/{checkpoint.uuid}") 
+        qrw = QrCodeWidget(f"https://piraat-hike-tracker.herokuapp.com/checkpoint/{checkpoint.uuid}") 
         b = qrw.getBounds()
         qrw.barHeight = 20*cm
         qrw.barWidth = 20*cm
